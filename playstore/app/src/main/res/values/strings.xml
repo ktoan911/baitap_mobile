@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">playstore</string>
+    
+    <string name="tab_for_you">For you</string>
+    <string name="tab_top_charts">Top charts</string>
+    <string name="tab_other_devices">Other devices</string>
+    <string name="tab_kids">Kids</string>
+    
+    <string name="sponsored">Sponsored</string>
+    <string name="suggested_for_you">Suggested for you</string>
+    <string name="recommended_for_you">Recommended for you</string>
+    
+    <string name="nav_games">Games</string>
+    <string name="nav_apps">Apps</string>
+    <string name="nav_search">Search</string>
+    <string name="nav_books">Books</string>
+    
+    <string name="mb_format">%d MB</string>
+    <string name="rating_format">%.1f</string>
+</resources>

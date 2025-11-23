@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">gmail</string>
+    <string name="inbox">Inbox</string>
+    <string name="banner_message">Touch a sender image to select that conversation.</string>
+</resources>
