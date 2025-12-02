@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <EditText
+        android:id="@+id/edtId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Mã số sinh viên"
+        android:textColorHint="#BDBDBD"
+        android:textSize="15sp"
+        android:paddingVertical="8dp"
+        android:background="@android:color/transparent"
+        android:inputType="number" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E0E0E0"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/edtName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Họ tên"
+        android:textColorHint="#BDBDBD"
+        android:textSize="15sp"
+        android:paddingVertical="8dp"
+        android:background="@android:color/transparent"
+        android:inputType="textPersonName" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E0E0E0"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/edtPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Số điện thoại"
+        android:textColorHint="#BDBDBD"
+        android:textSize="15sp"
+        android:paddingVertical="8dp"
+        android:background="@android:color/transparent"
+        android:inputType="phone" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E0E0E0"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/edtAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Địa chỉ"
+        android:textColorHint="#BDBDBD"
+        android:textSize="15sp"
+        android:paddingVertical="8dp"
+        android:background="@android:color/transparent"
+        android:inputType="text" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E0E0E0"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Cập nhật"
+        android:textColor="#FFFFFF"
+        android:textAllCaps="false"
+        android:background="@drawable/button_purple" />
+
+</LinearLayout>
