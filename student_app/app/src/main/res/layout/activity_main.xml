@@ -1,81 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.fragment.app.FragmentContainerView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_host_fragment"
+    android:name="androidx.navigation.fragment.NavHostFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:background="#FFFFFF">
-
-    <EditText
-        android:id="@+id/edtId"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Mã số sinh viên"
-        android:textColorHint="#BDBDBD"
-        android:textSize="15sp"
-        android:paddingVertical="8dp"
-        android:background="@android:color/transparent"
-        android:inputType="number" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#E0E0E0"
-        android:layout_marginBottom="8dp" />
-
-    <EditText
-        android:id="@+id/edtName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Họ tên"
-        android:textColorHint="#BDBDBD"
-        android:textSize="15sp"
-        android:paddingVertical="8dp"
-        android:background="@android:color/transparent"
-        android:inputType="textPersonName" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#E0E0E0"
-        android:layout_marginBottom="16dp" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="end"
-        android:layout_marginBottom="16dp">
-
-        <Button
-            android:id="@+id/btnAdd"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:text="Add"
-            android:textColor="#FFFFFF"
-            android:textAllCaps="false"
-            android:background="@drawable/button_purple"
-            android:paddingHorizontal="32dp"
-            android:layout_marginEnd="8dp" />
-
-        <Button
-            android:id="@+id/btnUpdate"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:text="Update"
-            android:textColor="#FFFFFF"
-            android:textAllCaps="false"
-            android:background="@drawable/button_purple"
-            android:paddingHorizontal="24dp" />
-
-    </LinearLayout>
-
-    <ListView
-        android:id="@+id/listView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:divider="@android:color/transparent"
-        android:dividerHeight="0dp" />
-
-</LinearLayout>
+    app:defaultNavHost="true"
+    app:navGraph="@navigation/nav_graph" />

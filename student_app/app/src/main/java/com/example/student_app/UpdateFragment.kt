@@ -1,0 +1,63 @@
+package com.example.student_app
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
+import com.example.student_app.databinding.FragmentUpdateBinding
+import com.google.android.material.appbar.MaterialToolbar
+
+class UpdateFragment : Fragment() {
+    private val viewModel: StudentViewModel by activityViewModels()
+    private var _binding: FragmentUpdateBinding? = null
+    private val binding get() = _binding!!
+    private val args: UpdateFragmentArgs by navArgs()
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentUpdateBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val toolbar = view.findViewById<MaterialToolbar>(R.id.toolbar)
+        toolbar.setNavigationOnClickListener {
+            findNavController().navigateUp()
+        }
+
+        val position = args.position
+        viewModel.students.value?.getOrNull(position)?.let { student ->
+            binding.student = student
+        }
+
+        binding.btnUpdate.setOnClickListener {
+            val id = binding.edtId.text.toString().trim()
+            val name = binding.edtName.text.toString().trim()
+            val phone = binding.edtPhone.text.toString().trim()
+            val address = binding.edtAddress.text.toString().trim()
+
+            if (id.isNotEmpty() && name.isNotEmpty() && phone.isNotEmpty() && address.isNotEmpty()) {
+                viewModel.updateStudent(position, Student(id, name, phone, address))
+                findNavController().navigateUp()
+            } else {
+                Toast.makeText(requireContext(), "Vui lòng nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+}
+
