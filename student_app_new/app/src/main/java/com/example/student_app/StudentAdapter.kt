@@ -1,38 +1,46 @@
 package com.example.student_app
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
-import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 
 class StudentAdapter(
-    private val context: Context,
-    private val students: List<Student>,
-    private val onDelete: (Int) -> Unit
-) : BaseAdapter() {
+    private var students: MutableList<Student>,
+    private val onEditClick: (Student) -> Unit,
+    private val onDeleteClick: (Student) -> Unit
+) : RecyclerView.Adapter<StudentAdapter.StudentViewHolder>() {
 
-    override fun getCount(): Int = students.size
+    inner class StudentViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val tvName: TextView = itemView.findViewById(R.id.tvName)
+        val tvId: TextView = itemView.findViewById(R.id.tvId)
+        val btnDelete: View = itemView.findViewById(R.id.btnDelete)
+    }
 
-    override fun getItem(position: Int): Any = students[position]
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StudentViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.student_item, parent, false)
+        return StudentViewHolder(view)
+    }
 
-    override fun getItemId(position: Int): Long = position.toLong()
-
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        val view = convertView ?: LayoutInflater.from(context)
-            .inflate(R.layout.student_item, parent, false)
-
+    override fun onBindViewHolder(holder: StudentViewHolder, position: Int) {
         val student = students[position]
-        val tvName = view.findViewById<TextView>(R.id.tvName)
-        val tvId = view.findViewById<TextView>(R.id.tvId)
-        val btnDelete = view.findViewById<ImageView>(R.id.btnDelete)
+        holder.tvName.text = student.name
+        holder.tvId.text = student.id
 
-        tvName.text = student.name
-        tvId.text = student.id
-        btnDelete.setOnClickListener { onDelete(position) }
+        holder.itemView.setOnClickListener {
+            onEditClick(student)
+        }
+        
+        // If there are specific buttons for edit/delete in the item layout
+        holder.btnDelete.setOnClickListener { onDeleteClick(student) }
+    }
 
-        return view
+    override fun getItemCount(): Int = students.size
+
+    fun updateData(newStudents: List<Student>) {
+        students.clear()
+        students.addAll(newStudents)
+        notifyDataSetChanged()
     }
 }
