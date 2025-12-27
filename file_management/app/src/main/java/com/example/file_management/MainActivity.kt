@@ -1,8 +1,3 @@
-/*
- * MainActivity - màn hình chính quản lý file
- * chức năng: duyệt, tạo, xóa, đổi tên, sao chép file/thư mục
- * xử lý quyền truy cập bộ nhớ ngoài (Android 11+ và phiên bản cũ)
- */
 package com.example.file_management
 
 import android.Manifest

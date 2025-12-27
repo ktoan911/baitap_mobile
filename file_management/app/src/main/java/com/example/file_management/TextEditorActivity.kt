@@ -1,7 +1,3 @@
-/*
- * TextEditorActivity - màn hình soạn thảo văn bản
- * đọc và ghi file .txt từ bộ nhớ ngoài
- */
 package com.example.file_management
 
 import android.os.Bundle

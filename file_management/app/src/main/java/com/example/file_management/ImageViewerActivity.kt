@@ -1,7 +1,3 @@
-/*
- * ImageViewerActivity - màn hình hiển thị ảnh
- * đọc và hiển thị file ảnh từ bộ nhớ ngoài
- */
 package com.example.file_management
 
 import android.graphics.BitmapFactory

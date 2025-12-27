@@ -1,7 +1,3 @@
-/*
- * FileAdapter - adapter hiển thị danh sách file/thư mục
- * xử lý sự kiện click, long click và context menu
- */
 package com.example.file_management
 
 import android.view.ContextMenu
